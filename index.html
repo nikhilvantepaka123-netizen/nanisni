@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdCoins</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "#00e5ff",
+                foreground: "#002024"
+              },
+              "background-dark": "#002024",
+              "surface-dark": "#003036",
+              "surface-darker": "#001a1d",
+              gold: "#FFD700",
+              silver: "#C0C0C0",
+              bronze: "#CD7F32",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "Manrope", "sans-serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            animation: {
+              'pulse-bright': 'pulse-bright 2s infinite',
+              'grow-down': 'grow-down 1s ease-out forwards',
+              'grow-right': 'grow-right 1s ease-out forwards',
+              'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+              'scale-in': 'scale-in 0.3s ease-out forwards',
+              'fall': 'fall 3s linear forwards',
+            },
+            keyframes: {
+              'pulse-bright': {
+                '0%, 100%': { boxShadow: '0 0 0 0 rgba(0, 229, 255, 0.7)' },
+                '50%': { boxShadow: '0 0 0 10px rgba(0, 229, 255, 0)' },
+              },
+              'grow-down': {
+                '0%': { height: '0', opacity: '0' },
+                '100%': { height: 'var(--target-height, 100%)', opacity: '1' },
+              },
+              'grow-right': {
+                '0%': { width: '0', opacity: '0' },
+                '100%': { width: '100%', opacity: '1' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'scale-in': {
+                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              'fall': {
+                '0%': { transform: 'translateY(-10vh) rotate(0deg)', opacity: '1' },
+                '100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #002024;
+        color: white;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      /* Hide scrollbar for clean UI */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
