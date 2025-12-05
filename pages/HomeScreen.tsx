@@ -1,3 +1,5 @@
+
+import React, { useEffect, useState } from 'react';
 import React from 'react';
 import { useUser } from '../context/UserContext';
 import { Link } from 'react-router-dom';
@@ -5,8 +7,17 @@ import { Link } from 'react-router-dom';
 const HomeScreen: React.FC = () => {
   const { user } = useUser();
 
-  // Get first name for the greeting
-  const firstName = user.name.split(' ')[0] || 'User';
+  // Default name User ani untundi
+  const [firstName, setFirstName] = useState(user.name?.split(' ')[0] || 'User');
+
+  useEffect(() => {
+    // @ts-ignore
+    // Telegram nundi real name laguthundi
+    if (window.Telegram?.WebApp?.initDataUnsafe?.user) {
+      // @ts-ignore
+      setFirstName(window.Telegram.WebApp.initDataUnsafe.user.first_name);
+    }
+  }, [user]);
 
   // Calculate days to show for streak
   // Show a sliding window of 5 days based on current streak
